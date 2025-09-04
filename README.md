@@ -1,7 +1,3 @@
-Um bom README é essencial para qualquer projeto. Ele funciona como um guia, ajudando outros desenvolvedores (e até você mesmo no futuro) a entenderem o projeto, suas funcionalidades e como colocá-lo para rodar.
-
-Aqui está uma sugestão de estrutura para o seu README, com o conteúdo que você pode usar:
-
 Sistema de Gestão de Estoque e Vendas
 Este é um sistema de gestão de estoque e um ponto de venda desenvolvido em React e Node.js. O sistema permite cadastrar e gerenciar produtos, adicionar itens a um carrinho de compras, aplicar descontos e finalizar vendas, tudo com dados persistentes através de uma API.
 
