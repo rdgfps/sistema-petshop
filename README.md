@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+Um bom README é essencial para qualquer projeto. Ele funciona como um guia, ajudando outros desenvolvedores (e até você mesmo no futuro) a entenderem o projeto, suas funcionalidades e como colocá-lo para rodar.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aqui está uma sugestão de estrutura para o seu README, com o conteúdo que você pode usar:
 
-## Available Scripts
+Sistema de Gestão de Estoque e Vendas
+Este é um sistema de gestão de estoque e um ponto de venda desenvolvido em React e Node.js. O sistema permite cadastrar e gerenciar produtos, adicionar itens a um carrinho de compras, aplicar descontos e finalizar vendas, tudo com dados persistentes através de uma API.
 
-In the project directory, you can run:
+Funcionalidades
+Cadastro de Produtos: Adicione novos produtos com nome, preço, quantidade e código de barras.
 
-### `npm start`
+Gestão de Estoque: O sistema gerencia a quantidade de produtos disponíveis, atualizando o estoque após cada venda.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ponto de Venda: Utilize a busca em tempo real com autocomplete para adicionar produtos ao carrinho de forma rápida e precisa.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Finalização de Venda: Aplique descontos (em valor ou porcentagem) e finalize a compra para gerar um resumo detalhado.
 
-### `npm test`
+Comunicação API: O frontend e o backend se comunicam através de uma API REST, garantindo que os dados sejam salvos de forma segura e não se percam ao recarregar a página.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tecnologias Utilizadas
+Frontend
+React: Biblioteca JavaScript para construir a interface de usuário.
 
-### `npm run build`
+React Hooks: Para gerenciar o estado e o ciclo de vida dos componentes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+CSS: Para estilização.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Backend
+Node.js: Ambiente de execução JavaScript no servidor.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Express: Framework web para Node.js, utilizado para criar a API.
 
-### `npm run eject`
+CORS: Middleware para permitir requisições do frontend.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Como Executar o Projeto
+Para rodar o projeto, você precisa ter o Node.js e o npm instalados. O projeto é dividido em duas partes, que devem ser executadas em terminais separados.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Executar o Backend
+Navegue até a pasta do backend e instale as dependências:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Bash
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm install
+Inicie o servidor:
 
-## Learn More
+Bash
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+node server.js
+O servidor estará rodando em http://localhost:3001.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Executar o Frontend
+Em um novo terminal, navegue até a pasta do frontend e instale as dependências:
 
-### Code Splitting
+Bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm install
+Inicie a aplicação React:
 
-### Analyzing the Bundle Size
+Bash
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm start
+O frontend estará acessível em http://localhost:3000.
 
-### Making a Progressive Web App
+Estrutura do Projeto
+A arquitetura do projeto é dividida para separar as responsabilidades:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+/nome_do_seu_projeto/
+├── backend/
+│   ├── node_modules/
+│   ├── server.js
+│   ├── package.json
+│   └── ...
+└── frontend/
+    ├── src/
+    │   ├── App.jsx
+    │   ├── App.css
+    │   └── ...
+    ├── node_modules/
+    ├── public/
+    ├── package.json
+    └── ...
+Melhorias Futuras
+Persistência de Dados Real: Substituir a simulação de banco de dados (let produtos = [...]) no arquivo server.js por uma conexão com um banco de dados real, como MongoDB ou PostgreSQL, para garantir que os dados não sejam perdidos ao reiniciar o servidor.
 
-### Advanced Configuration
+Validação de ID: Implementar uma validação no frontend e no backend para evitar o cadastro de produtos com códigos de barras duplicados.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Autenticação de Usuário: Adicionar um sistema de login para proteger o acesso às funcionalidades de estoque.
